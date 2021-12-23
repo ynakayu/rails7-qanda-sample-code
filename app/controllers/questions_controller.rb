@@ -14,8 +14,12 @@ class QuestionsController < ApplicationController
   
   # 質問の登録
   def create
-    # p params
-    p question_params
+    # Questionモデルを初期化
+    @question = Question.new(question_params)
+    # QuestionモデルをDBへ保存
+    @question.save
+    # showへリダイレクト
+    redirect_to @question
   end
   
   # 質問の編集
