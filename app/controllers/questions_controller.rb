@@ -14,6 +14,7 @@ class QuestionsController < ApplicationController
   
   # 質問の登録
   def create
+    p params
   end
   
   # 質問の編集
