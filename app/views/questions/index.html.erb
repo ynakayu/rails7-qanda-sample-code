@@ -15,6 +15,8 @@
     <td><%= question.content %></td>
     <td><%= link_to 'show', question_path(question) %></td>
     <td><%= link_to 'edit', edit_question_path(question) %></td>
+    <td><%= link_to 'destroy', question_path(question),
+          data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' }%></td>
   </tr>
   <% end %>
 </table>

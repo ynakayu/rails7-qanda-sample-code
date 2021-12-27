@@ -47,6 +47,9 @@ class QuestionsController < ApplicationController
   
   # 質問の削除
   def destroy
+    @question = Question.find(params[:id])
+    @question.destroy
+    redirect_to questions_path
   end
   
   private
