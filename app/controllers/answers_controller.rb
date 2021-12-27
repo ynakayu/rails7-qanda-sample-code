@@ -9,6 +9,10 @@ class AnswersController < ApplicationController
   
   # 回答の削除
   def destroy
+    @question = Question.find(params[:question_id])
+    @answer = @question.answers.find(params[:id])
+    @answer.destroy
+    redirect_to request.original_url
   end
   
   private

@@ -24,6 +24,10 @@
     Content:<br>
     <%= answer.content %>
   </p>
+  <p>
+    <%= link_to 'Destroy Answer', [answer.question, answer],
+      data: { turbo_method: 'delete', turbo_confirm: 'Are you sure?' } %>
+  </p>
 <% end %>
 
 <h2>Add a answer</h2>
