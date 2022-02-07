@@ -12,7 +12,7 @@ class AnswersController < ApplicationController
     @question = Question.find(params[:question_id])
     @answer = @question.answers.find(params[:id])
     @answer.destroy
-    redirect_to request.original_url
+    redirect_to(@question), status: :see_other
   end
   
   private
